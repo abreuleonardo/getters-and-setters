@@ -1,0 +1,51 @@
+package aula2303;
+
+public class Conta {
+    public int numero;
+    public double saldo;
+
+    public void Sacar(double valor) {
+        this.saldo = valor;
+    }
+    public void Depositar(double valor) {
+        this.numero += valor;
+    }
+    // get é público e pode ser acessado por qualquer classe.
+    // set é privado e por isso só pode ser usado pela conta.
+    public int getNumero() {
+        return numero;
+    }
+
+    public void setNumero(int numero) {
+        this.numero = numero;
+    }
+
+    public double getSaldo() {
+        return saldo;
+    }
+
+    public void setSaldo(double saldo) {
+        this.saldo = saldo;
+    }
+}
+
+
+
+
+-----------------------------------------------------------------------------------------------------------------------
+
+
+
+
+package aula2303;
+
+public class TesteConta {
+    public static void main(String[] args) {
+        Conta conta = new Conta();
+        conta.setNumero(157);
+        conta.setSaldo(50);
+        conta.Depositar(250.0);
+        conta.Sacar(200.0);
+        System.out.println(conta.getSaldo());
+    }
+}
